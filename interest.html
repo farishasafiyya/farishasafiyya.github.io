@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interest ♡︎</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://i.pinimg.com/736x/c0/17/e2/c017e2ab9fb337b5b8f8579be2f7bc92.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-color: #e6f2ff;
+      color: #003366;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: black;
+    }
+
+    .topnav {
+      background-color: steelblue;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .topnav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .topnav a:hover {
+      background-color: powderblue;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: black;
+    }
+
+     #digital-clock {
+      background-color: #cce7ff;
+      color: #003366;
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.35);
+      font-family: 'Orbitron', 'Courier New', monospace;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+      width: fit-content;
+      margin: 30px auto;
+      user-select: none;
+      letter-spacing: 4px;
+    }
+
+    #date {
+      font-size: 1.0rem;
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+      color: #0059b3;
+    }
+
+
+    .marquee-container {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .interest-box-center {
+      background-color: steelblue;
+      border-left: 4px solid black;
+      padding: 10px;
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+      width: 90%;
+      max-width: 500px;
+      margin: 20px auto;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px;
+      gap: 15px;
+    }
+
+    .media-box,
+    .text-box,
+    .roblox,
+    .description {
+      flex: 1 1 300px;
+      max-width: 450px;
+    }
+
+    .media-box img,
+    .media-box video,
+    .roblox img,
+    .roblox video {
+      width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .text-box,
+    .description {
+      background-color: #e0f0ff;
+      padding: 15px;
+      border-left: 4px solid steelblue;
+      border-radius: 8px;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .text-box h2,
+    .description h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .text-box p,
+    .description p {
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .yellow-box {
+      background-color: #f7dc6f;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 70%;
+      max-width: 400px;
+      margin: 30px auto;
+    }
+
+    .yellow-box h2, .yellow-box h3, .yellow-box p {
+      margin-top: 0;
+      color: black;
+      font-size: 17px;
+    }
+
+    .yellow-box audio {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+
+   
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .media-box,
+      .text-box,
+      .roblox,
+      .description {
+        max-width: 90%;
+      }
+    }
+
+    .books-box {
+      max-width: 800px;
+      margin: auto;
+      background-color: #ffffff;
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+      padding: 20px;
+    }
+
+    .books-container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .books-container video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .books-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #007BFF;
+    }
+
+    .books-description {
+      background-color: #f0f8ff;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #007BFF;
+      color: #004085;
+    }
+
+    .books-description h2 {
+      margin-top: 0;
+      color: #0056b3;
+    }
+
+footer {
+      background: steelblue;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left">
+      <h3>₊˚ʚ 𝚃𝚑𝚊𝚗𝚔𝚜 𝚏𝚘𝚛 𝚟𝚒𝚜𝚒𝚝𝚒𝚗𝚐 ɞ˚₊</h3>
+    </marquee>
+  </div>
+
+  <h1>【﻿ＩＮＴＥＲＥＳＴ】</h1>
+
+<div id="digital-clock">
+    <div id="time"></div>
+    <div id="date"></div>
+  </div>
+
+  <script>
+    function updateDigitalClock() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const dateString = now.toLocaleDateString(undefined, options);
+
+      document.getElementById('time').textContent = timeString;
+      document.getElementById('date').textContent = dateString;
+    }
+
+    setInterval(updateDigitalClock, 1000);
+    updateDigitalClock();
+  </script>
+
+  <div class="topnav">
+    <a href="index.html">𝐇𝐎𝐌𝐄</a>
+    <a href="aboutme.html">𝐀𝐁𝐎𝐔𝐓 𝐌𝐄</a>
+    <a href="interest.html" class="active">𝐈𝐍𝐓𝐄𝐑𝐄𝐒𝐓</a>
+    <a href="education.html">𝐄𝐃𝐔𝐂𝐀𝐓𝐈𝐎𝐍</a>
+  </div>
+
+ 
+  <div class="interest-box-center">
+    <h2>TREASURE💎</h2>
+  </div>
+
+  <div class="container">
+    <div class="media-box">
+      <img src="image/treasure1.jpg" alt="Gambar 1">
+      <img src="image/treasure2.jpg" alt="Gambar 2">
+      <video controls autoplay muted>
+        <source src="video/interest1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="text-box">
+      <h2>First Interest: TREASURE</h2>
+      <p>TREASURE (트레저) is a 10-member boy group under YG Entertainment. The group consists of: Choi Hyunsuk, Jihoon, Yoshi, Junkyu, Yoon Jaehyuk, Asahi, Haruto, Doyoung, Park Jeongwoo, and So Junghwan. They debuted on August 7, 2020. Why I chose to stan them? Because they have an organic love for music.</p>
+      <img src="image/treasure3.jpg" width="75%">
+      <p><b>Previous Leaders: Hyunsuk, Jihoon</b></p>
+      <img src="image/treasure4.jpg" width="75%">
+      <p><b>Current Leaders: Junkyu, Asahi</b></p>
+      <p>TREASURE changed their leaders in 2025 as part of a rotation system. Junkyu and Asahi replaced Hyunsuk and Jihoon to allow new leadership growth. No issues involved — just team development.</p>
+    </div>
+  </div>
+
+
+  <div class="yellow-box">
+    <h2>Now Playing</h2>
+    <h3>🎧TREASURE - YELLOW</h3>
+    <p>Latest Release</p>
+    <audio controls>
+      <source src="audio/yellow.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div class="interest-box-center">
+    <h2>ROBLOX🎮</h2>
+  </div>
+
+  <div class="container">
+    <div class="roblox">
+      <img src="image/roblox1.jpg" alt="Roblox image">
+      <video controls autoplay muted>
+        <source src="video/roblox2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="description">
+      <h2>Second Interest: Roblox</h2>
+      <p>Roblox is one of my comfort games to play whenever I have plenty of time; I can spend a whole day just playing with Roblox. Roblox is the game where I can have some alone time while gaining some creativity while playing the game. Besides, I often play it with my friends so that it will be more interesting. In Roblox, I can have a life that I dream about – another way to escape reality. Additionally, Roblox helps me develop problem-solving skills and logical thinking through game design and scripting. It’s inspiring to see how simple ideas can turn into popular games with dedication and teamwork.</p>
+      <center>
+      <img src="image/game1.jpg" width="75%">
+      <img src="image/game2.jpg" width="75%">
+      </center>
+    </div>
+  </div>
+
+
+  <div class="interest-box-center">
+    <h2>BOOKS📚</h2>
+  </div>
+
+  <div class="books-box">
+    <div class="books-container">
+      <video controls autoplay muted>
+        <source src="video/book1.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="books-grid">
+      <img src="image/book2.jpg" alt="Image 1">
+      <img src="image/book3.jpg" alt="Image 2">
+      <img src="image/book4.jpg" alt="Image 3">
+      <img src="image/book5.jpg" alt="Image 4">
+    </div>
+
+    <div class="books-description">
+      <center>
+      <h2>Third interest: Reading Books</h2>
+      </center>
+      <p>
+        Yes, I love reading (only when the mood comes). For me, besides playing some Roblox games, reading also gives me a peaceful mind. This is because I can escape from reality. Not every day do I read a book, but I will at least once a month since being a student is a busy life. Once I have free time, I will make sure that I will spend it on reading. Favourite genre? Romance, of course (because I'm a hopeless romantic), and horror – yes, even I'm the biggest scaredy cat. 
+      </p>
+    </div>
+  </div>
+
+  <br>
+  <footer>
+    <small>© 2025 Nur Farisha Safiyya</small>
+  </footer>
+</body>
+</html>
+

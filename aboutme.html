@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<head>
+  <title>About me ♡︎</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://i.pinimg.com/736x/c0/17/e2/c017e2ab9fb337b5b8f8579be2f7bc92.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      flex: 1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .topnav {
+      background-color: steelblue;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .topnav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .topnav a:hover {
+      background-color: powderblue;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: black;
+    }
+
+    h1 {
+      color: black;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    #digital-clock {
+      background-color: #cce7ff;
+      color: #003366;
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.35);
+      font-family: 'Orbitron', 'Courier New', monospace;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+      width: fit-content;
+      margin: 30px auto;
+      user-select: none;
+      letter-spacing: 4px;
+    }
+
+    #date {
+      font-size: 1.0rem;
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+      color: #0059b3;
+    }
+
+    .audio-player {
+      background-color: #cbeaff;
+      padding: 15px 20px;
+      border-radius: 15px;
+      width: fit-content;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      color: #333;
+    }
+
+    .audio-player p {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .audio-player audio {
+      width: 250px;
+      height: 35px;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .section-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 30px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
+
+    .info-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 460px;
+      text-align: center;
+    }
+
+    .box-image img {
+      width: 100%;
+      height: auto;
+      max-width: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid #0077cc;
+      margin-bottom: 15px;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .image-row img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid steelblue;
+      object-fit: cover;
+    }
+
+    .box-content {
+      font-size: 16px;
+      color: black;
+      line-height: 1.6;
+    }
+
+    .box-content h2 {
+      margin-top: 0;
+      color: steelblue;
+      font-size: 20px;
+    }
+
+    .box-content h3 {
+      color: steelblue;
+      margin-bottom: 10px;
+    }
+
+    .content-box {
+      background-color: white;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 960px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .text-paragraph {
+      color: #003366;
+      font-size: 16px;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    footer {
+      background: steelblue;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: auto;
+    }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left">
+      <h3>₊˚ʚ 𝚃𝚑𝚊𝚗𝚔𝚜 𝚏𝚘𝚛 𝚟𝚒𝚜𝚒𝚝𝚒𝚗𝚐 ɞ˚₊</h3>
+    </marquee>
+  </div>
+
+  <h1>【﻿ＡＢＯＵＴ　ＭＥ】</h1>
+
+  <div id="digital-clock">
+    <div id="time"></div>
+    <div id="date"></div>
+  </div>
+
+  <script>
+    function updateDigitalClock() {
+      const now = new Date();
+
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const dateString = now.toLocaleDateString(undefined, options);
+
+      document.getElementById('time').textContent = timeString;
+      document.getElementById('date').textContent = dateString;
+    }
+
+    setInterval(updateDigitalClock, 1000);
+    updateDigitalClock();
+  </script>
+
+  <div class="topnav">
+    <a href="index.html">𝐇𝐎𝐌𝐄</a>
+    <a href="aboutme.html" class="active">𝐀𝐁𝐎𝐔𝐓 𝐌𝐄</a>
+    <a href="interest.html">𝐈𝐍𝐓𝐄𝐑𝐄𝐒𝐓</a>
+    <a href="education.html">𝐄𝐃𝐔𝐂𝐀𝐓𝐈𝐎𝐍</a>
+  </div>
+
+  <div class="audio-player">
+    <p>🎧 LEE YOUNG JI (FEAT. D.O.) - SMALL GIRL</p>
+    <audio controls autoplay loop>
+      <source src="audio/background1.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <div class="section-container">
+    <div class="info-box fade-in">
+      <div class="box-image fade in">
+        <img src="image/farisha2.jpg" alt="Farisha">
+      </div>
+      <div class="box-content fade-in">
+        <h2>✦͙͛˚:➶ 𝗡𝘂𝗿 𝗙𝗮𝗿𝗶𝘀𝗵𝗮 𝗦𝗮𝗳𝗶𝘆𝘆𝗮 𝗯𝗶𝗻𝘁𝗶 𝗠𝗼𝗵𝗱 𝗦𝗵𝗮𝗵𝗿𝘂𝗹 ⋆｡˚ ☁︎</h2>
+        <p>Just an ordinary girl who was born on 4th June 2004 at KPJ Sentosa Medical Centre, Kuala Lumpur, and currently lives in Rawang, Selangor. I am the first daughter, and I have a younger brother who is 6 years younger than me. My blood type is B. My favourite food is my mama's and papa's cooking, and my all-time favourite drink is Teh Ais. My hobby is reading novels (surprisingly) and watching some random stuff on YouTube. Currently continuing my study for a diploma in information management at UiTM Kedah.</p>
+      </div>
+    </div>
+
+    <div class="info-box fade-in">
+      <div class="image-row">
+        <img src="image/family1.jpg" alt="Image 1">
+        <img src="image/family2.jpg" alt="Image 2">
+      </div>
+      <div class="box-content fade-in">
+        <br>
+        <h3>₊˚ʚ 𝐌𝐘 𝐅𝐀𝐌𝐈𝐋𝐘 ɞ˚₊</h3>
+        <p>I have a small but precious family that means the world to me. Though we may not be many in number, the love we share is big and unbreakable. Every moment together—whether it's laughing over dinner, watching movies, or just spending quiet time at home—feels special. We support each other through every high and low, and there's a warm, comforting feeling that only home and family can give. I'm truly grateful for my little circle of love ❤</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-box fade-in">
+    <div class="image-row fade-in">
+      <img src="image/friend1.jpg" alt="Image 1">
+      <img src="image/friend2.jpg" alt="Image 2">
+      <img src="image/friend3.jpg" alt="Image 3">
+    </div>
+    <br>
+    <h2 style="color: steelblue; text-align: center;">♡˗ˏˋ 𝙈𝙮 𝙁𝙧𝙞𝙚𝙣𝙙𝙨 ˎˊ˗♡ ✧</h2>
+    <p style="text-align:center; color:#003366;">
+      These are my people which are my friends who turn ordinary days into unforgettable ones. Whether we're talking nonsense, making last-minute plans, or just existing in the same room, it’s always a good time. They know all my weird habits and still stick around, which says a lot. 10/10, would friend again❤
+    </p>
+  </div>
+
+<br>
+  <footer>
+    <small>© 2025 Nur Farisha Safiyya</small>
+  </footer>
+
+</body>
+</html>
+

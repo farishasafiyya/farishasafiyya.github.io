@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Education♡︎</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      background-image: url('https://i.pinimg.com/736x/c0/17/e2/c017e2ab9fb337b5b8f8579be2f7bc92.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .topnav {
+      background-color: steelblue;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .topnav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .topnav a:hover {
+      background-color: powderblue;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: black;
+    }
+
+    h1 {
+      color: black;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    #digital-clock {
+      background-color: #cce7ff;
+      color: #003366;
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.35);
+      font-family: 'Orbitron', 'Courier New', monospace;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+      width: fit-content;
+      margin: 30px auto;
+      user-select: none;
+      letter-spacing: 4px;
+    }
+
+    #date {
+      font-size: 1.0rem;
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+      color: #0059b3;
+    }
+
+    .audio-player {
+      background-color: #cbeaff;
+      padding: 15px 20px;
+      border-radius: 15px;
+      width: fit-content;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      color: #333;
+    }
+
+    .audio-player p {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .audio-player audio {
+      width: 250px;
+      height: 35px;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .school-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .school-box {
+      background-color: #e6f2ff;
+      border-radius: 10px;
+      width: 300px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .school-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    }
+
+    .school-box img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .school-info {
+      padding: 12px 15px;
+    }
+
+    .school-info h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: #003366;
+    }
+
+    .school-info p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .school-box {
+        width: 100%;
+      }
+    }
+
+    footer {
+      background: steelblue;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left">
+      <h3>₊˚ʚ 𝚃𝚑𝚊𝚗𝚔𝚜 𝚏𝚘𝚛 𝚟𝚒𝚜𝚒𝚝𝚒𝚗𝚐 ɞ˚₊</h3>
+    </marquee>
+  </div>
+
+  <h1>【﻿ＥＤＵＣＡＴＩＯＮ】</h1>
+
+  <div id="digital-clock">
+    <div id="time"></div>
+    <div id="date"></div>
+  </div>
+
+  <script>
+    function updateDigitalClock() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const dateString = now.toLocaleDateString(undefined, options);
+
+      document.getElementById('time').textContent = timeString;
+      document.getElementById('date').textContent = dateString;
+    }
+
+    setInterval(updateDigitalClock, 1000);
+    updateDigitalClock();
+  </script>
+
+  <div class="topnav">
+    <a href="index.html">𝐇𝐎𝐌𝐄</a>
+    <a href="aboutme.html">𝐀𝐁𝐎𝐔𝐓 𝐌𝐄</a>
+    <a href="interest.html">𝐈𝐍𝐓𝐄𝐑𝐄𝐒𝐓</a>
+    <a href="education.html" class="active">𝐄𝐃𝐔𝐂𝐀𝐓𝐈𝐎𝐍</a>
+  </div>
+
+  <br>
+
+  <div class="school-row">
+    <div class="school-box">
+      <img src="image/education1.jpg" alt="SK Taman Desa 2">
+      <div class="school-info">
+        <h3>SK Taman Desa 2</h3>
+        <p><b>Location:</b> Bandar Country Homes, Rawang, Selangor</p>
+        <p><b>Year:</b> 2011 - 2018</p>
+      </div>
+    </div>
+
+    <div class="school-box">
+      <img src="image/education2.jpg" alt="SMK Taman Desa">
+      <div class="school-info">
+        <h3>SMK Taman Desa</h3>
+        <p><b>Location:</b> Bandar Country Homes, Rawang, Selangor</p>
+        <p><b>Year:</b> 2017 - 2022</p>
+      </div>
+    </div>
+
+    <div class="school-box">
+      <img src="image/education3.jpg" alt="UiTM Permatang Pauh">
+      <div class="school-info">
+        <h3>UiTM Permatang Pauh</h3>
+        <p><b>Location:</b> Pulau Pinang</p>
+        <p><b>Year:</b> Oct 2022 - Feb 2022 (Pre-Diploma)</p>
+      </div>
+    </div>
+
+    <div class="school-box">
+      <img src="image/education4.jpg" alt="UiTM Merbok">
+      <div class="school-info">
+        <h3>UiTM Merbok</h3>
+        <p><b>Location:</b> Kedah</p>
+        <p><b>Year:</b> 2023 - 2025</p>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <footer>
+    <small>© 2025 Nur Farisha Safiyya</small>
+  </footer>
+
+</body>
+</html>
